@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>Symfony Movies</h1>
+    <ul id="last_movies">
+        {% for last_movie in last_movies %}
+            <li><a href="{{ path('movie_details', {'slug': last_movie.slug} ) }}">{{ last_movie.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

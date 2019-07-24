@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Details of {{ movie.title }}{% endblock %}
+
+{% block body %}
+    <h1>{{ movie.title }}</h1>
+    <time>{{ movie.date|date('d/m/Y') }}</time>
+    <p>Réalisé par {{ movie.directors | map(director => "#{director.usageName}") | join (', ', ' et') }}</p>
+    <h2>Ils jouent dedans : </h2>
+    <ul id="actors">
+        {% for actor in movie.actors %}
+            <li>{{ actor.usageName }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

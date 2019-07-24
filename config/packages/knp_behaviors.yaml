@@ -1,0 +1,4 @@
+knp_doctrine_behaviors:
+  sluggable: true
+  translatable: ~
+  geocodable: ~
